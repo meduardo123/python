@@ -50,7 +50,13 @@ def nc(station, rg):
     pyautogui.doubleClick(389, 355)
     pyautogui.hotkey('ctrl', 'c')
     os = clipboard.paste()
-    if not os.isspace():
+    if os.isspace():
+        pyautogui.hotkey('tab')
+        pyautogui.hotkey('tab')
+        pyautogui.hotkey('tab')
+        pyautogui.hotkey('alt', 'tab')
+        return exit()
+    else:
         if os == '001 ':
             pyautogui.hotkey('tab')
             pyautogui.hotkey('tab')
@@ -158,5 +164,71 @@ def nc(station, rg):
             return 0
         
         
-        
-    
+def ncp(rg):
+    pyautogui.hotkey('alt', 'tab')
+    pyautogui.hotkey('f5')
+    pyautogui.write('nr33f')
+    pyautogui.hotkey('enter')
+    time.sleep(2)
+    pyautogui.write('r')
+    pyautogui.hotkey('enter')
+    time.sleep(2)
+    pyautogui.write('s')
+    pyautogui.hotkey('enter')
+    time.sleep(2)
+    # pesquisa cliente
+    pyautogui.hotkey('f4')
+    time.sleep(2)
+    pyautogui.hotkey('f8')
+    time.sleep(2)
+    pyautogui.hotkey('f8')
+    time.sleep(2)
+    pyautogui.hotkey('f8')
+    time.sleep(2)
+    pyautogui.hotkey('f8')
+    time.sleep(2)
+    pyautogui.write('2')
+    pyautogui.hotkey('enter')
+    time.sleep(2)
+    # pesquisa insumo
+    pyautogui.hotkey('f5')
+    time.sleep(2)
+    pyautogui.hotkey('tab')
+    pyautogui.write('mo')
+    pyautogui.hotkey('enter')
+    time.sleep(2)
+    pyautogui.write('5')
+    pyautogui.hotkey('enter')
+    time.sleep(2)
+    # preenche NC
+    pyautogui.hotkey('tab')
+    pyautogui.hotkey('tab')
+    pyautogui.hotkey('tab')
+    pyautogui.hotkey('tab')
+    pyautogui.hotkey('tab')
+    pyautogui.write(insumo)
+    pyautogui.hotkey('tab')
+    pyautogui.hotkey('tab')
+    pyautogui.write(tipo_nc)
+    pyautogui.hotkey('tab')
+    pyautogui.hotkey('tab')
+    pyautogui.hotkey('tab')
+    pyautogui.write(rg[1:6])
+    pyautogui.write(disposicao)
+    pyautogui.hotkey('enter')
+    time.sleep(3)
+    pyautogui.write('s')
+    pyautogui.hotkey('enter')
+    time.sleep(1)
+    pyautogui.hotkey('enter')
+    time.sleep(3)
+    pyautogui.write('4')
+    pyautogui.hotkey('enter')
+    time.sleep(3)
+    pyautogui.write('4')
+    pyautogui.hotkey('tab')
+    pyautogui.write('elmbdz')
+    pyautogui.hotkey('enter')
+    pyautogui.hotkey('alt', 'tab')
+    return 0
+            
